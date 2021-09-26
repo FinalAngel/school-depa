@@ -10,16 +10,15 @@ public class Toolbar extends VBox {
 
   public Toolbar(Stage stage) {
     Menu menu = new Menu("ColorPicker");
+    MenuItem item = new MenuItem("Close");
+    MenuBar menuBar = new MenuBar();
 
     // close entry
-    MenuItem item = new MenuItem("Close");
     item.setOnAction(e -> {
       stage.close();
     });
 
     menu.getItems().add(item);
-
-    MenuBar menuBar = new MenuBar();
     menuBar.getMenus().add(menu);
 
     this.getChildren().add(menuBar);
