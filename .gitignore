@@ -1,0 +1,8 @@
+# maven
+/target/
+
+# editors
+.classpath
+.project
+.settings/
+.vscode/
