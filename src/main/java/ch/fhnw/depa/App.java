@@ -24,8 +24,8 @@ public class App extends Application {
 
     Scene scene = new Scene(colorPicker);
 
-    stage.setScene(scene);
     stage.setTitle("Color Picker");
+    stage.setScene(scene);
     stage.show();
   }
 

@@ -37,4 +37,5 @@ public class PreviewBox {
 
     preview.setBackground(bg);
   }
+
 }

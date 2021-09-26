@@ -1,11 +1,14 @@
 package ch.fhnw.depa.colorpicker.components;
 
-import ch.fhnw.depa.colorpicker.ColorPicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 
+import ch.fhnw.depa.colorpicker.ColorPicker;
+
 public class PresetButtons {
+  private VBox buttons;
+
   private ToggleGroup colorRadio = new ToggleGroup();
   private RadioButton redRadio = new RadioButton("red");
   private RadioButton blueRadio = new RadioButton("blue");
@@ -14,8 +17,6 @@ public class PresetButtons {
   private RadioButton cyanRadio = new RadioButton("cyan");
   private RadioButton orangeRadio = new RadioButton("orange");
   private RadioButton blackRadio = new RadioButton("black");
-
-  private VBox buttons;
 
   public PresetButtons(ColorPicker app) {
     redRadio.setToggleGroup(colorRadio);

@@ -6,14 +6,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 import ch.fhnw.depa.colorpicker.ui.LowerUI;
-import ch.fhnw.depa.ui.ColorPickerUiTopBox;
+import ch.fhnw.depa.colorpicker.ui.UpperUI;
 
 public class ColorPicker extends VBox {
   private IntegerProperty red;
   private IntegerProperty green;
   private IntegerProperty blue;
 
-  private ColorPickerUiTopBox colorPickerUiTopBox;
+  private UpperUI upper;
   private LowerUI lower;
 
   public ColorPicker() {
@@ -21,10 +21,10 @@ public class ColorPicker extends VBox {
     this.green = new SimpleIntegerProperty(0);
     this.blue = new SimpleIntegerProperty(0);
 
-    this.colorPickerUiTopBox = new ColorPickerUiTopBox(red, green, blue);
+    this.upper = new UpperUI(this);
     this.lower = new LowerUI(this);
 
-    this.getChildren().add(colorPickerUiTopBox.getTopBox());
+    this.getChildren().add(upper.getUI());
     this.getChildren().add(lower.getUI());
     this.addListener();
   }
@@ -34,7 +34,7 @@ public class ColorPicker extends VBox {
       int value = getBound(n.intValue());
 
       red.set(value);
-      colorPickerUiTopBox.setRedHexFieldText(Integer.toHexString(value));
+      upper.update("red", Integer.toHexString(value));
       lower.update(value, green.intValue(), blue.intValue());
     });
 
@@ -42,7 +42,7 @@ public class ColorPicker extends VBox {
       int value = getBound(n.intValue());
 
       green.set(value);
-      colorPickerUiTopBox.setGreenHexFieldText(Integer.toHexString(value));
+      upper.update("green", Integer.toHexString(value));
       lower.update(red.intValue(), value, blue.intValue());
     });
 
@@ -50,7 +50,7 @@ public class ColorPicker extends VBox {
       int value = getBound(n.intValue());
 
       blue.set(value);
-      colorPickerUiTopBox.setBlueHexFieldText(Integer.toHexString(value));
+      upper.update("blue", Integer.toHexString(value));
       lower.update(red.intValue(), green.intValue(), value);
     });
   }

@@ -1,14 +1,15 @@
 package ch.fhnw.depa.colorpicker.components;
 
-import ch.fhnw.depa.colorpicker.ColorPicker;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
+import ch.fhnw.depa.colorpicker.ColorPicker;
+
 public class StepButtons {
+  private VBox buttons;
+
   private Button darker;
   private Button brighter;
-
-  private VBox buttons;
 
   private int increment = 10;
 
