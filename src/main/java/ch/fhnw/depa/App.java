@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import javafx.geometry.Insets;
 
 import ch.fhnw.depa.colorpicker.ColorPicker;
+import ch.fhnw.depa.ui.Toolbar;
 
 public class App extends Application {
   private Stage stage;

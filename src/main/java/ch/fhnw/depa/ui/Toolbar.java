@@ -1,4 +1,4 @@
-package ch.fhnw.depa;
+package ch.fhnw.depa.ui;
 
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
