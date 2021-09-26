@@ -2,66 +2,113 @@ package ch.fhnw.depa.colorpicker;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.geometry.Insets;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
-import ch.fhnw.depa.ui.ColorPickerUiLowerBox;
+import ch.fhnw.depa.colorpicker.ui.LowerUI;
 import ch.fhnw.depa.ui.ColorPickerUiTopBox;
 
 public class ColorPicker extends VBox {
-  private IntegerProperty red = new SimpleIntegerProperty(0);
-  private IntegerProperty green = new SimpleIntegerProperty(0);
-  private IntegerProperty blue = new SimpleIntegerProperty(0);
+  private IntegerProperty red;
+  private IntegerProperty green;
+  private IntegerProperty blue;
+
+  private ColorPickerUiTopBox colorPickerUiTopBox;
+  private LowerUI lower;
 
   public ColorPicker() {
-    setSpacing(15);
-    setPadding(new Insets(20));
+    this.red = new SimpleIntegerProperty(0);
+    this.green = new SimpleIntegerProperty(0);
+    this.blue = new SimpleIntegerProperty(0);
 
-    ColorPickerUiTopBox colorPickerUiTopBox = new ColorPickerUiTopBox(red, green, blue);
-    HBox topBox = colorPickerUiTopBox.getTopBox();
+    this.colorPickerUiTopBox = new ColorPickerUiTopBox(red, green, blue);
+    this.lower = new LowerUI(this);
 
-    ColorPickerUiLowerBox colorPickerUiLowerBox = new ColorPickerUiLowerBox(red, green, blue);
-    HBox lowerBox = colorPickerUiLowerBox.getLowerBox();
+    this.getChildren().add(colorPickerUiTopBox.getTopBox());
+    this.getChildren().add(lower.getUI());
+    this.addListener();
+  }
 
-    getChildren().add(topBox);
-    getChildren().add(lowerBox);
-
+  private void addListener() {
     red.addListener((p, o, n) -> {
-      int i = limitInt(n.intValue());
-      red.set(i);
-      colorPickerUiLowerBox.radioSelector(i, green.intValue(), blue.intValue());
-      colorPickerUiTopBox.setRedHexFieldText(Integer.toHexString(i));
-      colorPickerUiLowerBox.colorFieldSetBackground(i, green.intValue(), blue.intValue());
+      int value = getBound(n.intValue());
+
+      red.set(value);
+      colorPickerUiTopBox.setRedHexFieldText(Integer.toHexString(value));
+      lower.update(value, green.intValue(), blue.intValue());
     });
 
     green.addListener((p, o, n) -> {
-      int i = limitInt(n.intValue());
-      green.set(i);
-      colorPickerUiLowerBox.radioSelector(red.intValue(), i, blue.intValue());
-      colorPickerUiTopBox.setGreenHexFieldText(Integer.toHexString(i));
-      colorPickerUiLowerBox.colorFieldSetBackground(red.intValue(), i, blue.intValue());
+      int value = getBound(n.intValue());
+
+      green.set(value);
+      colorPickerUiTopBox.setGreenHexFieldText(Integer.toHexString(value));
+      lower.update(red.intValue(), value, blue.intValue());
     });
 
     blue.addListener((p, o, n) -> {
-      int i = limitInt(n.intValue());
-      blue.set(i);
-      colorPickerUiLowerBox.radioSelector(red.intValue(), green.intValue(), i);
-      colorPickerUiTopBox.setBlueHexFieldText(Integer.toHexString(i));
-      colorPickerUiLowerBox.colorFieldSetBackground(red.intValue(), green.intValue(), i);
-    });
+      int value = getBound(n.intValue());
 
+      blue.set(value);
+      colorPickerUiTopBox.setBlueHexFieldText(Integer.toHexString(value));
+      lower.update(red.intValue(), green.intValue(), value);
+    });
   }
 
-  private int limitInt(int i) {
+  private int getBound(int i) {
     if (i > 255) {
       return 255;
-    } else if (i < 0) {
+    }
+
+    if (i < 0) {
       return 0;
     }
 
     return i;
+  }
+
+  public IntegerProperty getRed() {
+    return this.red;
+  }
+
+  public IntegerProperty getGreen() {
+    return this.green;
+  }
+
+  public IntegerProperty getBlue() {
+    return this.blue;
+  }
+
+  public void setRed(int value) {
+    red.set(value);
+  }
+
+  public void setGreen(int value) {
+    green.set(value);
+  }
+
+  public void setBlue(int value) {
+    blue.set(value);
+  }
+
+  /**
+   * Sets RGB value
+   * 
+   * @param r red value as number [0 - 255]
+   * @param g green value as number [0 - 255]
+   * @param b blue value as number [0 - 255]
+   */
+  public void setRGB(int r, int g, int b) {
+    red.set(r);
+    green.set(g);
+    blue.set(b);
+  }
+
+  /**
+   * Returns value as Color
+   */
+  public Color getRGB() {
+    return Color.rgb(getRed().getValue(), getBlue().getValue(), getGreen().getValue());
   }
 
 }
