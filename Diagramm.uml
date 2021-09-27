@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ch.fhnw.depa</OriginalElement>
+  <nodes>
+    <node x="1332.0" y="245.5">ch.fhnw.depa.colorpicker.ui.DecFields</node>
+    <node x="239.0" y="188.0">ch.fhnw.depa.colorpicker.ui.PresetButtons</node>
+    <node x="1141.0" y="257.0">ch.fhnw.depa.colorpicker.ui.Sliders</node>
+    <node x="837.1354166666667" y="81.0">ch.fhnw.depa.colorpicker.abstracts.UIAbstract</node>
+    <node x="868.1354166666667" y="0.0">ch.fhnw.depa.colorpicker.interfaces.UI</node>
+    <node x="909.0" y="257.0">ch.fhnw.depa.colorpicker.ui.PreviewBox</node>
+    <node x="684.0" y="245.5">ch.fhnw.depa.colorpicker.ui.StepButtons</node>
+    <node x="675.5" y="594.0">ch.fhnw.depa.colorpicker.ColorPicker</node>
+    <node x="0.0" y="246.0">ch.fhnw.depa.colorpicker.Toolbar</node>
+    <node x="690.0" y="1049.0">ch.fhnw.depa.App</node>
+    <node x="475.0" y="245.5">ch.fhnw.depa.colorpicker.ui.HexFields</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ch.fhnw.depa.colorpicker.ui.HexFields" target="ch.fhnw.depa.colorpicker.abstracts.UIAbstract" relationship="GENERALIZATION">
+      <point x="0.0" y="-110.5" />
+      <point x="569.5" y="163.0" />
+      <point x="902.6354166666667" y="163.0" />
+      <point x="0.0" y="28.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.HexFields" relationship="TO_ONE">
+      <point x="0.0" y="-202.5" />
+      <point x="786.5" y="554.0" />
+      <point x="569.5" y="554.0" />
+      <point x="0.0" y="110.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.HexFields" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="0.0" y="110.5" />
+      <point x="569.5" y="554.0" />
+      <point x="786.5" y="554.0" />
+      <point x="0.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.StepButtons" target="ch.fhnw.depa.colorpicker.abstracts.UIAbstract" relationship="GENERALIZATION">
+      <point x="0.0" y="-110.5" />
+      <point x="786.5" y="163.0" />
+      <point x="902.6354166666667" y="163.0" />
+      <point x="0.0" y="28.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.PreviewBox" target="ch.fhnw.depa.colorpicker.abstracts.UIAbstract" relationship="GENERALIZATION">
+      <point x="0.0" y="-99.0" />
+      <point x="1015.0" y="163.0" />
+      <point x="902.6354166666667" y="163.0" />
+      <point x="0.0" y="28.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.App" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="-48.25" y="-87.0" />
+      <point x="738.25" y="1024.0" />
+      <point x="731.0" y="1024.0" />
+      <point x="-55.5" y="202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.Toolbar" relationship="CREATE">
+      <point x="74.0" y="-202.5" />
+      <point x="860.5" y="574.0" />
+      <point x="796.5" y="574.0" />
+      <point x="796.5" y="544.0" />
+      <point x="182.5" y="544.0" />
+      <point x="73.0" y="110.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.Sliders" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="DEPENDENCY">
+      <point x="-57.0" y="99.0" />
+      <point x="1169.5" y="564.0" />
+      <point x="776.5" y="564.0" />
+      <point x="776.5" y="574.0" />
+      <point x="712.5" y="574.0" />
+      <point x="-74.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.PresetButtons" relationship="CREATE">
+      <point x="74.0" y="-202.5" />
+      <point x="860.5" y="574.0" />
+      <point x="796.5" y="574.0" />
+      <point x="796.5" y="544.0" />
+      <point x="419.0" y="544.0" />
+      <point x="72.0" y="168.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.Sliders" target="ch.fhnw.depa.colorpicker.abstracts.UIAbstract" relationship="GENERALIZATION">
+      <point x="0.0" y="-99.0" />
+      <point x="1226.5" y="163.0" />
+      <point x="902.6354166666667" y="163.0" />
+      <point x="0.0" y="28.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.PreviewBox" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="DEPENDENCY">
+      <point x="-70.66666666666663" y="99.0" />
+      <point x="944.3333333333334" y="564.0" />
+      <point x="776.5" y="564.0" />
+      <point x="776.5" y="574.0" />
+      <point x="712.5" y="574.0" />
+      <point x="-74.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.Sliders" relationship="TO_ONE">
+      <point x="0.0" y="-202.5" />
+      <point x="786.5" y="554.0" />
+      <point x="1226.5" y="554.0" />
+      <point x="0.0" y="99.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.Sliders" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="0.0" y="99.0" />
+      <point x="1226.5" y="554.0" />
+      <point x="786.5" y="554.0" />
+      <point x="0.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.abstracts.UIAbstract" target="ch.fhnw.depa.colorpicker.interfaces.UI" relationship="REALIZATION">
+      <point x="0.0" y="-28.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.StepButtons" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="DEPENDENCY">
+      <point x="-68.33333333333326" y="110.5" />
+      <point x="718.1666666666667" y="564.0" />
+      <point x="776.5" y="564.0" />
+      <point x="776.5" y="574.0" />
+      <point x="712.5" y="574.0" />
+      <point x="-74.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.StepButtons" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="0.0" y="110.5" />
+      <point x="0.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.PresetButtons" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="DEPENDENCY">
+      <point x="-72.0" y="168.0" />
+      <point x="275.0" y="564.0" />
+      <point x="776.5" y="564.0" />
+      <point x="776.5" y="574.0" />
+      <point x="712.5" y="574.0" />
+      <point x="-74.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.StepButtons" relationship="TO_ONE">
+      <point x="0.0" y="-202.5" />
+      <point x="0.0" y="110.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.PreviewBox" relationship="TO_ONE">
+      <point x="0.0" y="-202.5" />
+      <point x="786.5" y="554.0" />
+      <point x="1015.0" y="554.0" />
+      <point x="0.0" y="99.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.PreviewBox" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="0.0" y="99.0" />
+      <point x="1015.0" y="554.0" />
+      <point x="786.5" y="554.0" />
+      <point x="0.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.DecFields" relationship="CREATE">
+      <point x="74.0" y="-202.5" />
+      <point x="860.5" y="574.0" />
+      <point x="796.5" y="574.0" />
+      <point x="796.5" y="544.0" />
+      <point x="1494.5" y="544.0" />
+      <point x="65.0" y="110.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.HexFields" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="DEPENDENCY">
+      <point x="-63.0" y="110.5" />
+      <point x="506.5" y="564.0" />
+      <point x="776.5" y="564.0" />
+      <point x="776.5" y="574.0" />
+      <point x="712.5" y="574.0" />
+      <point x="-74.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.PresetButtons" target="ch.fhnw.depa.colorpicker.abstracts.UIAbstract" relationship="GENERALIZATION">
+      <point x="0.0" y="-168.0" />
+      <point x="347.0" y="163.0" />
+      <point x="902.6354166666667" y="163.0" />
+      <point x="0.0" y="28.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.PreviewBox" relationship="CREATE">
+      <point x="74.0" y="-202.5" />
+      <point x="860.5" y="574.0" />
+      <point x="796.5" y="574.0" />
+      <point x="796.5" y="544.0" />
+      <point x="1085.6666666666667" y="544.0" />
+      <point x="70.66666666666674" y="99.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.StepButtons" relationship="CREATE">
+      <point x="74.0" y="-202.5" />
+      <point x="860.5" y="574.0" />
+      <point x="796.5" y="574.0" />
+      <point x="796.5" y="544.0" />
+      <point x="854.8333333333333" y="544.0" />
+      <point x="68.33333333333326" y="110.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.PresetButtons" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="0.0" y="168.0" />
+      <point x="347.0" y="554.0" />
+      <point x="786.5" y="554.0" />
+      <point x="0.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.PresetButtons" relationship="TO_ONE">
+      <point x="0.0" y="-202.5" />
+      <point x="786.5" y="554.0" />
+      <point x="347.0" y="554.0" />
+      <point x="0.0" y="168.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.DecFields" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="DEPENDENCY">
+      <point x="-65.0" y="110.5" />
+      <point x="1364.5" y="564.0" />
+      <point x="776.5" y="564.0" />
+      <point x="776.5" y="574.0" />
+      <point x="712.5" y="574.0" />
+      <point x="-74.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.DecFields" relationship="TO_ONE">
+      <point x="0.0" y="-202.5" />
+      <point x="786.5" y="554.0" />
+      <point x="1429.5" y="554.0" />
+      <point x="0.0" y="110.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.DecFields" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="0.0" y="110.5" />
+      <point x="1429.5" y="554.0" />
+      <point x="786.5" y="554.0" />
+      <point x="0.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.HexFields" relationship="CREATE">
+      <point x="74.0" y="-202.5" />
+      <point x="860.5" y="574.0" />
+      <point x="796.5" y="574.0" />
+      <point x="796.5" y="544.0" />
+      <point x="632.5" y="544.0" />
+      <point x="63.0" y="110.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.ui.Sliders" relationship="CREATE">
+      <point x="74.0" y="-202.5" />
+      <point x="860.5" y="574.0" />
+      <point x="796.5" y="574.0" />
+      <point x="796.5" y="544.0" />
+      <point x="1283.5" y="544.0" />
+      <point x="57.0" y="99.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.Toolbar" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="TO_ONE">
+      <point x="0.0" y="110.0" />
+      <point x="109.5" y="554.0" />
+      <point x="786.5" y="554.0" />
+      <point x="0.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ColorPicker" target="ch.fhnw.depa.colorpicker.Toolbar" relationship="TO_ONE">
+      <point x="0.0" y="-202.5" />
+      <point x="786.5" y="554.0" />
+      <point x="109.5" y="554.0" />
+      <point x="0.0" y="110.0" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.Toolbar" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="DEPENDENCY">
+      <point x="-73.0" y="110.0" />
+      <point x="36.5" y="564.0" />
+      <point x="776.5" y="564.0" />
+      <point x="776.5" y="574.0" />
+      <point x="712.5" y="574.0" />
+      <point x="-74.0" y="-202.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.colorpicker.ui.DecFields" target="ch.fhnw.depa.colorpicker.abstracts.UIAbstract" relationship="GENERALIZATION">
+      <point x="0.0" y="-110.5" />
+      <point x="1429.5" y="163.0" />
+      <point x="902.6354166666667" y="163.0" />
+      <point x="0.0" y="28.5" />
+    </edge>
+    <edge source="ch.fhnw.depa.App" target="ch.fhnw.depa.colorpicker.ColorPicker" relationship="CREATE">
+      <point x="48.25" y="-87.0" />
+      <point x="834.75" y="1024.0" />
+      <point x="842.0" y="1024.0" />
+      <point x="55.5" y="202.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6926790024135157" showDependencies="true" x="763.5" y="611.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
