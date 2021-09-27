@@ -3,6 +3,7 @@ package ch.fhnw.depa.colorpicker;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Insets;
+import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -66,6 +67,7 @@ public class ColorPicker extends VBox {
     ui.getChildren().add(hexFields.getFields());
     ui.setPadding(new Insets(spacing));
     this.getChildren().add(ui);
+    this.getChildren().add(new Separator());
 
     ui = new HBox();
     ui.getChildren().add(preview.getPreview());

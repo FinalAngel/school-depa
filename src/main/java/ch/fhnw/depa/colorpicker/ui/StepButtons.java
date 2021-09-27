@@ -1,5 +1,7 @@
 package ch.fhnw.depa.colorpicker.ui;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
@@ -30,6 +32,7 @@ public class StepButtons extends UIAbstract {
 
   private void setDefaults() {
     buttons.setSpacing(15);
+    buttons.setAlignment(Pos.TOP_RIGHT);
   }
 
   private void addListener() {
