@@ -29,7 +29,7 @@ public class PreviewBox extends UIAbstract {
 
   public void setDefaults() {
     preview.setMinWidth(200);
-    preview.setMinHeight(200 / 1.25);
+    preview.setMinHeight(200 / 1.30);
 
     BackgroundFill fill = new BackgroundFill(app.getRGB(), radius, inset);
     Background bg = new Background(fill);
