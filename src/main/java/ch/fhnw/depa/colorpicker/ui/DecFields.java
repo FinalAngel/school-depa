@@ -1,4 +1,4 @@
-package ch.fhnw.depa.colorpicker.components;
+package ch.fhnw.depa.colorpicker.ui;
 
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;

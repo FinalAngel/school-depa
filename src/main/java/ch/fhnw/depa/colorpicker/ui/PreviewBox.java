@@ -1,4 +1,4 @@
-package ch.fhnw.depa.colorpicker.components;
+package ch.fhnw.depa.colorpicker.ui;
 
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -17,8 +17,8 @@ public class PreviewBox {
 
   public PreviewBox(ColorPicker app) {
     preview = new Label();
-    preview.setMinWidth(150);
-    preview.setMinHeight(100);
+    preview.setMinWidth(200);
+    preview.setMinHeight(200 / 1.25);
 
     // set initial fill
     BackgroundFill fill = new BackgroundFill(app.getRGB(), radius, inset);

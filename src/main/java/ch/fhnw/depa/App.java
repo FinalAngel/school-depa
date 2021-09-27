@@ -4,14 +4,13 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.geometry.Insets;
 
 import ch.fhnw.depa.colorpicker.ColorPicker;
-import ch.fhnw.depa.ui.Toolbar;
 
 public class App extends Application {
-  private Stage stage;
-  private Toolbar toolBar;
+  private Scene scene;
+
+  private VBox layout;
   private ColorPicker colorPicker;
 
   public static void main(String[] args) {
@@ -20,24 +19,12 @@ public class App extends Application {
 
   @Override
   public void start(Stage stage) {
-    this.stage = stage;
-
-    toolBar = new Toolbar(stage);
-    toolBar.setSpacing(15);
-
-    colorPicker = new ColorPicker();
-    colorPicker.setSpacing(15);
-    colorPicker.setPadding(new Insets(20));
-
-    Scene scene = new Scene(new VBox(toolBar, colorPicker));
-
+    colorPicker = new ColorPicker(stage);
+    layout = new VBox(colorPicker);
+    scene = new Scene(layout);
     stage.setTitle("Color Picker");
     stage.setScene(scene);
     stage.show();
-  }
-
-  public Stage getStage() {
-    return stage;
   }
 
 }

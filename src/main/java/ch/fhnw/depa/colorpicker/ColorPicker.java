@@ -2,56 +2,106 @@ package ch.fhnw.depa.colorpicker;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.geometry.Insets;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-import ch.fhnw.depa.colorpicker.ui.LowerUI;
-import ch.fhnw.depa.colorpicker.ui.UpperUI;
+import ch.fhnw.depa.colorpicker.ui.DecFields;
+import ch.fhnw.depa.colorpicker.ui.HexFields;
+import ch.fhnw.depa.colorpicker.ui.PresetButtons;
+import ch.fhnw.depa.colorpicker.ui.PreviewBox;
+import ch.fhnw.depa.colorpicker.ui.Sliders;
+import ch.fhnw.depa.colorpicker.ui.StepButtons;
 
 public class ColorPicker extends VBox {
+  private HBox ui;
+
+  private Toolbar toolBar;
+
   private IntegerProperty red;
   private IntegerProperty green;
   private IntegerProperty blue;
 
-  private UpperUI upper;
-  private LowerUI lower;
+  private StepButtons stepButtons;
+  private PresetButtons presetButtons;
+  private PreviewBox preview;
 
-  public ColorPicker() {
+  private Sliders sliders;
+  private DecFields decFields;
+  private HexFields hexFields;
+
+  private int spacing = 15;
+
+  public ColorPicker(Stage stage) {
     this.red = new SimpleIntegerProperty(0);
     this.green = new SimpleIntegerProperty(0);
     this.blue = new SimpleIntegerProperty(0);
 
-    this.upper = new UpperUI(this);
-    this.lower = new LowerUI(this);
+    this.toolBar = new Toolbar(this, stage);
 
-    this.getChildren().add(upper.getUI());
-    this.getChildren().add(lower.getUI());
+    this.stepButtons = new StepButtons(this);
+    this.presetButtons = new PresetButtons(this);
+    this.preview = new PreviewBox(this);
+
+    this.sliders = new Sliders(this);
+    this.decFields = new DecFields(this);
+    this.hexFields = new HexFields(this);
+
+    this.buildUI();
     this.addListener();
+  }
+
+  private void buildUI() {
+    toolBar.setSpacing(spacing);
+    this.getChildren().add(toolBar);
+
+    ui = new HBox();
+    ui.getChildren().add(sliders.getSliders());
+    ui.getChildren().add(decFields.getFields());
+    ui.getChildren().add(hexFields.getFields());
+    ui.setSpacing(spacing);
+    ui.setPadding(new Insets(spacing));
+
+    this.getChildren().add(ui);
+
+    ui = new HBox();
+    ui.getChildren().add(preview.getPreview());
+    ui.getChildren().add(presetButtons.getButtons());
+    ui.getChildren().add(stepButtons.getButtons());
+    ui.setSpacing(spacing);
+    ui.setPadding(new Insets(spacing));
+
+    this.getChildren().add(ui);
   }
 
   private void addListener() {
     red.addListener((p, o, n) -> {
       int value = getBound(n.intValue());
-
       red.set(value);
-      upper.update("red", Integer.toHexString(value));
-      lower.update(value, green.intValue(), blue.intValue());
+
+      hexFields.setRedHexField(Integer.toHexString(value));
+      preview.setPreview(value, green.intValue(), blue.intValue());
+      presetButtons.setButtons(value, green.intValue(), blue.intValue());
     });
 
     green.addListener((p, o, n) -> {
       int value = getBound(n.intValue());
-
       green.set(value);
-      upper.update("green", Integer.toHexString(value));
-      lower.update(red.intValue(), value, blue.intValue());
+
+      hexFields.setGreenHexField(Integer.toHexString(value));
+      preview.setPreview(red.intValue(), value, blue.intValue());
+      presetButtons.setButtons(red.intValue(), value, blue.intValue());
     });
 
     blue.addListener((p, o, n) -> {
       int value = getBound(n.intValue());
-
       blue.set(value);
-      upper.update("blue", Integer.toHexString(value));
-      lower.update(red.intValue(), green.intValue(), value);
+
+      hexFields.setBlueHexField(Integer.toHexString(value));
+      preview.setPreview(red.intValue(), green.intValue(), value);
+      presetButtons.setButtons(red.intValue(), green.intValue(), value);
     });
   }
 

@@ -1,4 +1,4 @@
-package ch.fhnw.depa.colorpicker.components;
+package ch.fhnw.depa.colorpicker.ui;
 
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
