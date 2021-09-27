@@ -4,10 +4,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.NumberStringConverter;
 
-import ch.fhnw.depa.colorpicker.interfaces.UI;
+import ch.fhnw.depa.colorpicker.abstracts.UIAbstract;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class DecFields implements UI {
+public class DecFields extends UIAbstract {
   private ColorPicker app;
 
   private VBox decFields;

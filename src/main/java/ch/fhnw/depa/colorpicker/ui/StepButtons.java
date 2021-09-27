@@ -3,10 +3,10 @@ package ch.fhnw.depa.colorpicker.ui;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-import ch.fhnw.depa.colorpicker.interfaces.UI;
+import ch.fhnw.depa.colorpicker.abstracts.UIAbstract;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class StepButtons implements UI {
+public class StepButtons extends UIAbstract {
   private ColorPicker app;
 
   private VBox buttons;

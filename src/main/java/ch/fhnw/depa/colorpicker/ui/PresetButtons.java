@@ -4,10 +4,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 
-import ch.fhnw.depa.colorpicker.interfaces.UI;
+import ch.fhnw.depa.colorpicker.abstracts.UIAbstract;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class PresetButtons implements UI {
+public class PresetButtons extends UIAbstract {
   private ColorPicker app;
 
   private VBox buttons;

@@ -7,10 +7,10 @@ import javafx.scene.paint.Color;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 
-import ch.fhnw.depa.colorpicker.interfaces.UI;
+import ch.fhnw.depa.colorpicker.abstracts.UIAbstract;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class PreviewBox implements UI {
+public class PreviewBox extends UIAbstract {
   private ColorPicker app;
 
   private Label preview;
