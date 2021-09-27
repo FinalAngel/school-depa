@@ -3,6 +3,7 @@ package ch.fhnw.depa.colorpicker.ui;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -27,7 +28,7 @@ public class PreviewBox extends UIAbstract {
     setDefaults();
   }
 
-  public void setDefaults() {
+  private void setDefaults() {
     preview.setMinWidth(200);
     preview.setMinHeight(200 / 1.30);
 
@@ -36,16 +37,16 @@ public class PreviewBox extends UIAbstract {
     preview.setBackground(bg);
   }
 
-  public Label getPreview() {
-    return preview;
-  }
-
   public void setPreview(int r, int g, int b) {
     Color color = Color.rgb(r, g, b);
     BackgroundFill fill = new BackgroundFill(color, radius, inset);
     Background bg = new Background(fill);
 
     preview.setBackground(bg);
+  }
+
+  public VBox render() {
+    return new VBox(preview);
   }
 
 }

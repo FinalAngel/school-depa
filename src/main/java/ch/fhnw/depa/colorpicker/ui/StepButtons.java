@@ -48,7 +48,7 @@ public class StepButtons extends UIAbstract {
     });
   }
 
-  public VBox getButtons() {
+  public VBox render() {
     return buttons;
   }
 

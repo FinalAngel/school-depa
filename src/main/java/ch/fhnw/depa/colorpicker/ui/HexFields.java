@@ -37,10 +37,6 @@ public class HexFields extends UIAbstract {
     hexFields.setSpacing(5);
   }
 
-  public VBox getFields() {
-    return hexFields;
-  }
-
   public void setRedHexField(String string) {
     redHexField.setText(string);
   }
@@ -51,6 +47,10 @@ public class HexFields extends UIAbstract {
 
   public void setBlueHexField(String string) {
     blueHexField.setText(string);
+  }
+
+  public VBox render() {
+    return hexFields;
   }
 
 }

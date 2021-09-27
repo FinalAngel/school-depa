@@ -59,10 +59,6 @@ public class PresetButtons extends UIAbstract {
     buttons.setPadding(new Insets(0, 50, 0, 0));
   }
 
-  public VBox getButtons() {
-    return buttons;
-  }
-
   public void setButtons(int r, int g, int b) {
     redRadio.selectedProperty().set(r == 255 && g == 0 && b == 0);
     greenRadio.selectedProperty().set(r == 0 && g == 255 && b == 0);
@@ -71,6 +67,10 @@ public class PresetButtons extends UIAbstract {
     cyanRadio.selectedProperty().set(r == 0 && g == 255 && b == 255);
     orangeRadio.selectedProperty().set(r == 255 && g == 136 && b == 0);
     blackRadio.selectedProperty().set(r == 0 && g == 0 && b == 0);
+  }
+
+  public VBox render() {
+    return buttons;
   }
 
 }

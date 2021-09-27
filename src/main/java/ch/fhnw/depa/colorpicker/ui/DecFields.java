@@ -41,7 +41,7 @@ public class DecFields extends UIAbstract {
     decFields.setPadding(new Insets(0, 10, 0, 10));
   }
 
-  public VBox getFields() {
+  public VBox render() {
     return decFields;
   }
 

@@ -36,7 +36,7 @@ public class Sliders extends UIAbstract {
     sliders.setPadding(new Insets(5, 0, 5, 0));
   }
 
-  public VBox getSliders() {
+  public VBox render() {
     return sliders;
   }
 

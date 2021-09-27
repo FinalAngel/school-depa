@@ -62,18 +62,18 @@ public class ColorPicker extends VBox {
     this.getChildren().add(toolBar);
 
     ui = new HBox();
-    ui.getChildren().add(sliders.getSliders());
-    ui.getChildren().add(decFields.getFields());
-    ui.getChildren().add(hexFields.getFields());
+    ui.getChildren().add(sliders.render());
+    ui.getChildren().add(decFields.render());
+    ui.getChildren().add(hexFields.render());
     ui.setPadding(new Insets(spacing));
     this.getChildren().add(ui);
     this.getChildren().add(new Separator());
 
     ui = new HBox();
-    ui.getChildren().add(preview.getPreview());
-    ui.getChildren().add(presetButtons.getButtons());
+    ui.getChildren().add(preview.render());
+    ui.getChildren().add(presetButtons.render());
     ui.getChildren().add(spacingPane);
-    ui.getChildren().add(stepButtons.getButtons());
+    ui.getChildren().add(stepButtons.render());
     ui.setSpacing(spacing);
     ui.setPadding(new Insets(spacing));
     this.getChildren().add(ui);
