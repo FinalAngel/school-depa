@@ -4,16 +4,29 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.NumberStringConverter;
 
+import ch.fhnw.depa.colorpicker.interfaces.UI;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class DecFields {
+public class DecFields implements UI {
+  private ColorPicker app;
+
   private VBox decFields;
 
-  private TextField redDecField = new TextField();
-  private TextField greenDecField = new TextField();
-  private TextField blueDecField = new TextField();
+  private TextField redDecField;
+  private TextField greenDecField;
+  private TextField blueDecField;
 
   public DecFields(ColorPicker app) {
+    this.app = app;
+
+    this.redDecField = new TextField();
+    this.greenDecField = new TextField();
+    this.blueDecField = new TextField();
+
+    setDefaults();
+  }
+
+  private void setDefaults() {
     redDecField.setDisable(false);
     greenDecField.setDisable(false);
     blueDecField.setDisable(false);

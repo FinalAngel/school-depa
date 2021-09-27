@@ -3,16 +3,29 @@ package ch.fhnw.depa.colorpicker.ui;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
+import ch.fhnw.depa.colorpicker.interfaces.UI;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class HexFields {
+public class HexFields implements UI {
+  private ColorPicker app;
+
   private VBox hexFields;
 
-  private TextField redHexField = new TextField();
-  private TextField greenHexField = new TextField();
-  private TextField blueHexField = new TextField();
+  private TextField redHexField;
+  private TextField greenHexField;
+  private TextField blueHexField;
 
   public HexFields(ColorPicker app) {
+    this.app = app;
+
+    this.redHexField = new TextField();
+    this.greenHexField = new TextField();
+    this.blueHexField = new TextField();
+
+    setDefaults();
+  }
+
+  private void setDefaults() {
     redHexField.setDisable(true);
     redHexField.setText(Integer.toHexString(app.getRed().intValue()));
     greenHexField.setDisable(true);

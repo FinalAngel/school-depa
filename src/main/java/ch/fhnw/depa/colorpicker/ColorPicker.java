@@ -16,8 +16,6 @@ import ch.fhnw.depa.colorpicker.ui.Sliders;
 import ch.fhnw.depa.colorpicker.ui.StepButtons;
 
 public class ColorPicker extends VBox {
-  private HBox ui;
-
   private Toolbar toolBar;
 
   private IntegerProperty red;
@@ -49,11 +47,13 @@ public class ColorPicker extends VBox {
     this.decFields = new DecFields(this);
     this.hexFields = new HexFields(this);
 
-    this.buildUI();
-    this.addListener();
+    buildUI();
+    addListener();
   }
 
   private void buildUI() {
+    HBox ui;
+
     toolBar.setSpacing(spacing);
     this.getChildren().add(toolBar);
 
@@ -63,7 +63,6 @@ public class ColorPicker extends VBox {
     ui.getChildren().add(hexFields.getFields());
     ui.setSpacing(spacing);
     ui.setPadding(new Insets(spacing));
-
     this.getChildren().add(ui);
 
     ui = new HBox();
@@ -72,7 +71,6 @@ public class ColorPicker extends VBox {
     ui.getChildren().add(stepButtons.getButtons());
     ui.setSpacing(spacing);
     ui.setPadding(new Insets(spacing));
-
     this.getChildren().add(ui);
   }
 

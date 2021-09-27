@@ -4,21 +4,39 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 
+import ch.fhnw.depa.colorpicker.interfaces.UI;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class PresetButtons {
+public class PresetButtons implements UI {
+  private ColorPicker app;
+
   private VBox buttons;
 
-  private ToggleGroup colorRadio = new ToggleGroup();
-  private RadioButton redRadio = new RadioButton("red");
-  private RadioButton blueRadio = new RadioButton("blue");
-  private RadioButton greenRadio = new RadioButton("green");
-  private RadioButton yellowRadio = new RadioButton("yellow");
-  private RadioButton cyanRadio = new RadioButton("cyan");
-  private RadioButton orangeRadio = new RadioButton("orange");
-  private RadioButton blackRadio = new RadioButton("black");
+  private ToggleGroup colorRadio;
+  private RadioButton redRadio;
+  private RadioButton blueRadio;
+  private RadioButton greenRadio;
+  private RadioButton yellowRadio;
+  private RadioButton cyanRadio;
+  private RadioButton orangeRadio;
+  private RadioButton blackRadio;
 
   public PresetButtons(ColorPicker app) {
+    this.app = app;
+
+    this.colorRadio = new ToggleGroup();
+    this.redRadio = new RadioButton("red");
+    this.blueRadio = new RadioButton("blue");
+    this.greenRadio = new RadioButton("green");
+    this.yellowRadio = new RadioButton("yellow");
+    this.cyanRadio = new RadioButton("cyan");
+    this.orangeRadio = new RadioButton("orange");
+    this.blackRadio = new RadioButton("black");
+
+    setDefaults();
+  }
+
+  private void setDefaults() {
     redRadio.setToggleGroup(colorRadio);
     blueRadio.setToggleGroup(colorRadio);
     greenRadio.setToggleGroup(colorRadio);

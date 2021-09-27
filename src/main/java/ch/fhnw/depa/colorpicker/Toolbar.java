@@ -19,14 +19,14 @@ public class Toolbar extends VBox {
     this.stage = stage;
     this.colorPicker = colorPicker;
 
-    reset = new MenuItem("Reset");
-    close = new MenuItem("Close");
+    this.reset = new MenuItem("Reset");
+    this.close = new MenuItem("Close");
 
-    menu = new Menu("App");
+    this.menu = new Menu("App");
     menu.getItems().add(reset);
     menu.getItems().add(close);
 
-    menuBar = new MenuBar();
+    this.menuBar = new MenuBar();
     menuBar.getMenus().add(menu);
 
     this.getChildren().add(menuBar);
