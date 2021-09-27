@@ -1,5 +1,6 @@
 package ch.fhnw.depa.colorpicker.ui;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
@@ -55,6 +56,7 @@ public class PresetButtons extends UIAbstract {
 
     buttons = new VBox(redRadio, blueRadio, greenRadio, yellowRadio, cyanRadio, orangeRadio, blackRadio);
     buttons.setSpacing(5);
+    buttons.setPadding(new Insets(0, 50, 0, 0));
   }
 
   public VBox getButtons() {

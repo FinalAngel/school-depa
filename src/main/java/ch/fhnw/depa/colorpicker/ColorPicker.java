@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Insets;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -53,6 +54,8 @@ public class ColorPicker extends VBox {
 
   private void buildUI() {
     HBox ui;
+    Pane spacingPane = new Pane();
+    spacingPane.setMinWidth(60);
 
     toolBar.setSpacing(spacing);
     this.getChildren().add(toolBar);
@@ -61,13 +64,13 @@ public class ColorPicker extends VBox {
     ui.getChildren().add(sliders.getSliders());
     ui.getChildren().add(decFields.getFields());
     ui.getChildren().add(hexFields.getFields());
-    ui.setSpacing(spacing);
     ui.setPadding(new Insets(spacing));
     this.getChildren().add(ui);
 
     ui = new HBox();
     ui.getChildren().add(preview.getPreview());
     ui.getChildren().add(presetButtons.getButtons());
+    ui.getChildren().add(spacingPane);
     ui.getChildren().add(stepButtons.getButtons());
     ui.setSpacing(spacing);
     ui.setPadding(new Insets(spacing));

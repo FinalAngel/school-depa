@@ -1,5 +1,6 @@
 package ch.fhnw.depa.colorpicker.ui;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 
@@ -32,6 +33,7 @@ public class Sliders extends UIAbstract {
 
     sliders = new VBox(redSlider, greenSlider, blueSlider);
     sliders.setSpacing(15);
+    sliders.setPadding(new Insets(5, 0, 5, 0));
   }
 
   public VBox getSliders() {

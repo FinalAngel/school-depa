@@ -1,5 +1,6 @@
 package ch.fhnw.depa.colorpicker.ui;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.NumberStringConverter;
@@ -37,6 +38,7 @@ public class DecFields extends UIAbstract {
 
     decFields = new VBox(redDecField, greenDecField, blueDecField);
     decFields.setSpacing(5);
+    decFields.setPadding(new Insets(0, 10, 0, 10));
   }
 
   public VBox getFields() {
