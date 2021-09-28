@@ -49,9 +49,9 @@ public class DecFields extends UIAbstract {
   private ChangeListener<String> validateNumberField(TextField field, int length) {
     // this should be refactored but my cat is annoying me right now
     return (obs, oldVal, newVal) -> {
-      if (!newVal.matches("\\d*")) {
-        field.setText(newVal.replaceAll("[^\\d]", ""));
-      } else if (newVal.length() > length) {
+      field.setText(newVal.replaceAll("[^\\d]", ""));
+
+      if (newVal.length() > length) {
         field.setText(oldVal);
       } else if (newVal == "") {
         field.setText("0");
