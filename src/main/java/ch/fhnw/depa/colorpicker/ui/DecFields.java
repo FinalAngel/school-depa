@@ -1,5 +1,6 @@
 package ch.fhnw.depa.colorpicker.ui;
 
+import javafx.beans.value.ChangeListener;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -36,9 +37,28 @@ public class DecFields extends UIAbstract {
     greenDecField.textProperty().bindBidirectional(app.getGreen(), new NumberStringConverter());
     blueDecField.textProperty().bindBidirectional(app.getBlue(), new NumberStringConverter());
 
+    redDecField.textProperty().addListener(validateNumberField(redDecField, 3));
+    greenDecField.textProperty().addListener(validateNumberField(greenDecField, 3));
+    blueDecField.textProperty().addListener(validateNumberField(blueDecField, 3));
+
     decFields = new VBox(redDecField, greenDecField, blueDecField);
     decFields.setSpacing(5);
     decFields.setPadding(new Insets(0, 10, 0, 10));
+  }
+
+  private ChangeListener<String> validateNumberField(TextField field, int length) {
+    // this should be refactored but my cat is annoying me right now
+    return (obs, oldVal, newVal) -> {
+      if (!newVal.matches("\\d*")) {
+        field.setText(newVal.replaceAll("[^\\d]", ""));
+      } else if (newVal.length() > length) {
+        field.setText(oldVal);
+      } else if (newVal == "") {
+        field.setText("0");
+      } else if (Integer.parseInt(newVal) >= 255) {
+        field.setText("255");
+      }
+    };
   }
 
   public VBox render() {
