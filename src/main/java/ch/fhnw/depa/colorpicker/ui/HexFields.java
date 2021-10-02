@@ -3,10 +3,9 @@ package ch.fhnw.depa.colorpicker.ui;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-import ch.fhnw.depa.colorpicker.abstracts.UIAbstract;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class HexFields extends UIAbstract {
+public class HexFields {
   private ColorPicker app;
 
   private VBox hexFields;

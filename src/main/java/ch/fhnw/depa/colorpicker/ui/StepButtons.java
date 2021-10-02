@@ -4,10 +4,9 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-import ch.fhnw.depa.colorpicker.abstracts.UIAbstract;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class StepButtons extends UIAbstract {
+public class StepButtons {
   private ColorPicker app;
 
   private VBox buttons;

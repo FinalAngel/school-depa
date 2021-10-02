@@ -4,10 +4,9 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 
-import ch.fhnw.depa.colorpicker.abstracts.UIAbstract;
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class Sliders extends UIAbstract {
+public class Sliders {
   private ColorPicker app;
 
   private VBox sliders;
