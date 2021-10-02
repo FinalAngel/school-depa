@@ -6,9 +6,7 @@ import javafx.scene.layout.VBox;
 
 import ch.fhnw.depa.colorpicker.ColorPicker;
 
-public class Sliders {
-
-  private VBox sliders;
+public class Sliders extends VBox {
 
   public Sliders(ColorPicker app) {
 
@@ -18,14 +16,10 @@ public class Sliders {
     redSlider.valueProperty().bindBidirectional(app.getRed());
     greenSlider.valueProperty().bindBidirectional(app.getGreen());
     blueSlider.valueProperty().bindBidirectional(app.getBlue());
-
-    sliders = new VBox(redSlider, greenSlider, blueSlider);
-    sliders.setSpacing(15);
-    sliders.setPadding(new Insets(5, 0, 5, 0));
+    getChildren().add(redSlider);
+    getChildren().add(greenSlider);
+    getChildren().add(blueSlider);
+    setSpacing(15);
+    setPadding(new Insets(5, 0, 5, 0));
   }
-
-  public VBox render() {
-    return sliders;
-  }
-
 }

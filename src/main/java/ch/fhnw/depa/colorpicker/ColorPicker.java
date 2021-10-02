@@ -28,7 +28,6 @@ public class ColorPicker extends VBox {
   private PresetButtons presetButtons;
   private PreviewBox preview;
 
-  private Sliders sliders;
   private DecFields decFields;
   private HexFields hexFields;
 
@@ -45,7 +44,6 @@ public class ColorPicker extends VBox {
     this.presetButtons = new PresetButtons(this);
     this.preview = new PreviewBox(this);
 
-    this.sliders = new Sliders(this);
     this.decFields = new DecFields(this);
     this.hexFields = new HexFields(this);
 
@@ -62,7 +60,7 @@ public class ColorPicker extends VBox {
     this.getChildren().add(toolBar);
 
     ui = new HBox();
-    ui.getChildren().add(sliders.render());
+    ui.getChildren().add(new Sliders(this));
     ui.getChildren().add(decFields.render());
     ui.getChildren().add(hexFields.render());
     ui.setPadding(new Insets(spacing));
