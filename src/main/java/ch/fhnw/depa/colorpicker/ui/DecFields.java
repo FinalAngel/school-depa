@@ -40,6 +40,8 @@ public class DecFields {
     greenDecField.textProperty().addListener(validateNumberField(greenDecField, 3));
     blueDecField.textProperty().addListener(validateNumberField(blueDecField, 3));
 
+    app.getRed().addListener((p, o, n) -> System.out.println("Red value changed from " + o + " to " + n));
+
     decFields = new VBox(redDecField, greenDecField, blueDecField);
     decFields.setSpacing(5);
     decFields.setPadding(new Insets(0, 10, 0, 10));
